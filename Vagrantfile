@@ -23,6 +23,10 @@ Vagrant.configure("2") do |config|
   config.vm.define "j2" do |j2|
     j2.vm.hostname = "j2.local"
     j2.vm.network :private_network, ip: "192.168.60.5"
+    j2.vm.network "forwarded_port", guest: 9000, host: 9000
+    j2.vm.provision "shell" do |shell|
+      shell.path = "sonarqube.sh"
+    end
   end
 
 end
