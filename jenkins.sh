@@ -12,5 +12,5 @@ systemctl enable jenkins
 systemctl start jenkins
 sleep 1m
 JENKINSPWD=$(cat /var/lib/jenkins/secrets/initialAdminPassword)
-yum install git
+yum install -y git
 echo $JENKINSPWD
